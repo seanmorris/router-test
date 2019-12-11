@@ -24,9 +24,13 @@ $ make start        # start the project
 $ make start-fg     # start the project in the foreground
 ```
 
-Stop the project services with one command:
+You can then run the following command to generate 1000 test records:
 
-Once thats done, navigate to http://localhost in your browser.
+```bash
+$ make fill
+```
+
+You can also stop the project services with one command:
 
 ```bash
 $ make stop
