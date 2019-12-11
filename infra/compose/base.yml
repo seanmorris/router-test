@@ -1,0 +1,19 @@
+version: '2.4'
+
+services:
+
+  backend:
+    image:    ${REPO}/route-test.backend:${TAG}
+    restart:  always
+    env_file: ["../../.env"]
+    build:
+      target:     ${TARGET}
+      context:    ../../
+      dockerfile: infra/docker/backend.dockerfile
+    environment:
+      RT_REDIS_HOST: redis
+      RT_REDIS_PORT: 6379
+
+  redis:
+    restart: always
+    image:   redis:5.0

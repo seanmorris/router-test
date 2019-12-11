@@ -1,0 +1,17 @@
+version: '2.4'
+
+services:
+
+  backend:
+    depends_on: ["redis"]
+    ports:      ["80:80"]
+    extends:
+      file:     base.yml
+      service:  backend
+    environment:
+      DHOST_IP: ${DHOST_IP}
+
+  redis:
+    extends:
+      service: redis
+      file:    base.yml

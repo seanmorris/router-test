@@ -1,0 +1,20 @@
+version: '2.4'
+
+services:
+
+  backend:
+    depends_on: ["redis"]
+    ports:      ["80:80"]
+    extends:
+      file:     base.yml
+      service:  backend
+    volumes:    ["../../:/app"]
+    environment:
+      XDEBUG_CONFIG: ${XDEBUG_CONFIG}
+      DHOST_IP:      ${DHOST_IP}
+
+  redis:
+    ports: ["6379:6379"]
+    extends:
+      service: redis
+      file:    base.yml

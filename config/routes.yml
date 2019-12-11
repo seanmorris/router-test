@@ -1,0 +1,51 @@
+patients:
+
+  patients:
+
+    - method:     GET
+      controller: SeanMorris\RouteTest\PatientsController
+      function:   list
+
+    - method:     POST
+      controller: SeanMorris\RouteTest\PatientsController
+      function:   create
+  
+  patients/{\SeanMorris\RouteTest\Patient}:
+
+    - method:     GET
+      controller: SeanMorris\RouteTest\PatientsController
+      function:   get
+
+    - method:     PATCH
+      controller: SeanMorris\RouteTest\PatientsController
+      function:   update
+
+    - method:     DELETE
+      controller: SeanMorris\RouteTest\PatientsController
+      function:   delete
+
+patients.metrics:
+
+  patients/{\SeanMorris\RouteTest\Patient}/metrics:
+
+    - method:     GET
+      controller: SeanMorris\RouteTest\PatientsMetricsController
+      function:   list
+
+    - method:     POST
+      controller: SeanMorris\RouteTest\PatientsMetricsController
+      function:   create
+
+  patients/{\SeanMorris\RouteTest\Patient}/metrics/{\SeanMorris\RouteTest\Metric}:
+
+    - method:     GET
+      controller: SeanMorris\RouteTest\PatientsMetricsController
+      function:   get
+
+    - method:     PATCH
+      controller: SeanMorris\RouteTest\PatientsMetricsController
+      function:   update
+
+    - method:     DELETE
+      controller: SeanMorris\RouteTest\PatientsMetricsController
+      function:   delete
